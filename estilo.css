@@ -1,14 +1,19 @@
-/*
-azul escuro: rgb(2, 27, 38)
-azul claro: rgb(195, 227, 245)
-
-azul-botao: rgb(23, 176, 228)
-azul-link: rgb(9, 70, 92)
-
-*/
-
 body {
     background-color:rgb(2, 27, 38);
+}
+#titulo{
+    font-size: 80px;
+}
+ #foto{
+    background: url(surf.png);
+    background-repeat: no-repeat; 
+    position: relative;
+    padding: 140px;
+    padding-left: 100px;
+    padding-top: 50px;
+    left: 20px;
+    width: 970px;
+    top: 20px;
 }
  
  #servicos{
