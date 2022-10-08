@@ -1,0 +1,92 @@
+/*
+azul escuro: rgb(2, 27, 38)
+azul claro: rgb(195, 227, 245)
+
+azul-botao: rgb(23, 176, 228)
+azul-link: rgb(9, 70, 92)
+
+*/
+
+body {
+    background-color:rgb(2, 27, 38);
+}
+#titulo{
+    font-size: 80px;
+}
+ #foto{
+    background: url(surf.png);
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 140px;
+    padding-left: 100px;
+    padding-top: 50px;
+    left: 20px;
+    width: 970px;
+    top: 20px;
+ }
+ #servicos{
+    background-color: rgb(53, 124, 247);
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: 35px;
+    color: white;
+    display: inline-block;
+    text-align: justify
+ }
+ #projetos{
+    background-color: rgb(53, 124, 247);
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: 35px;
+    color: white;
+    display: inline-block;
+    text-align: justify
+ }
+ #clientes{
+    background-color: rgb(53, 124, 247);
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: -1px;
+    color: white;
+    display: inline-block;
+    text-align: justify
+ }
+ .botao{
+    position:relative
+ }
+main {
+    background-color: #fff;
+}
+blockquote, main footer {
+    background-color: rgb(195, 227, 245);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+header h1 {
+    color: #fff;
+}
+nav ul {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    list-style:none;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    color:#fff;
+}
