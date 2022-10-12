@@ -1,0 +1,114 @@
+/*
+azul escuro: rgb(2, 27, 38)
+azul claro: rgb(195, 227, 245)
+
+azul-botao: rgb(23, 176, 228)
+azul-link: rgb(9, 70, 92)
+
+*/
+
+body {
+    background-color:rgb(2, 27, 38);
+}
+#titulo{
+    font-size: 80px;
+}
+#foto2{
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    width: 500px;
+
+}
+.titulodois{
+
+}
+ #foto{
+    background: url(surf.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    padding: 200px;
+    padding-left: 295px;
+    left: 20px;
+    width: 970px;
+    top: 10px;
+ }
+ #servicos{
+    background-color: rgb(53, 124, 247);
+    font-family: arial;
+    font-size: 30px;
+    margin-right: 60px;
+    margin-left: -120px;
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: 35px;
+    color: white;
+    display: inline-block;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+ #projetos{
+    background-color: rgb(53, 124, 247);
+    font-family: arial;
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: 35px;
+    color: white;
+    display: inline-block;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+ #clientes{
+    background-color: rgb(53, 124, 247);
+    margin-left: 60px;
+    font-family: arial;
+    position: relative;
+    width: 300px;
+    height: 250px;
+    left: 320px;
+    top: -1px;
+    color: white;
+    display: inline-block;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+ .botao{
+    position:relative
+ }
+main {
+    background-color: #fff;
+}
+blockquote, main footer {
+    background-color: rgb(195, 227, 245);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+header h1 {
+    color: #fff;
+}
+nav ul {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    list-style:none;
+}
+
+nav li {
+    padding: 20px;
+}
+
+nav a {
+    color:#fff;
+}
