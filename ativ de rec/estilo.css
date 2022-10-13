@@ -1,0 +1,13 @@
+#homepage{
+    background-color: rgb(175, 20, 59);
+    backgrou
+}
+
+li{
+    background-color: rgb(27, 15, 0);
+
+}
+
+nav ul li a:hover{
+    background-color: rgb(175, 20, 59);
+}
