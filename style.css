@@ -1,0 +1,43 @@
+body{
+    background-color:black;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.boxv{
+    width: 60px;
+    height: 60px;
+    background-color: #0dcc0d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.boxa{
+    width: 60px;
+    height: 60px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.boxvermelho{
+    width: 60px;
+    height: 60px;
+    background-color: #ff0000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFFFFF;
+}
