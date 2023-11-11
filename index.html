@@ -1,453 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programação de Clientes Web</title>
-    <style>
-        header {
-            display: flex;
-            color:#008;
-        }
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Controle de despesas</title>
+  </head>
+  <body>
+    <h2>Controle de despesas</h2>
 
-        header h1 {
-            text-transform: uppercase;
-        }
+    <div class="container">
+      <h4>Saldo atual</h4>
+      
+      <h1 id="balance" class="balance">R$ 0.00</h1>
 
-        .container {
-            width:90%;
-            margin:auto;
-        }
+      <div class="inc-exp-container">
+        <div>
+          <h4>Receitas</h4>
+          <p id="money-plus" class="money plus">+ R$0.00</p>
+        </div>
 
-        label, button  {
-            display: block;
-            margin: 10px 0 2px;
-            font-weight: bold;
-        }
+        <div>
+          <h4>Despesas</h4>
+          <p id="money-minus" class="money minus">- R$0.00</p>
+        </div>
+      </div>
 
-        input, select {
-            margin-left: 20px;
-        }
-        table {
-            border-spacing:0;
-            border-bottom: solid #333 1px;
-            margin: auto;
-        }
-        td, th {
-            margin:0;
-            padding: 5px 20px;
-            border-left: solid #333 1px;
-            border-top: solid #333 1px;
-        }
+      <h3>Transações</h3>
+      
+      <ul id="transactions" class="transactions">
+     
+      </ul>
 
-        td:last-child, th:last-child {
-            border-right: solid #333 1px;
-        }
+      <h3>Adicionar transação</h3>
+      
+      <form id="form">
+        <div class="form-control">
+          <label for="text">Nome</label>
+          <input autofocus type="text" id="text" placeholder="Nome da transação" />
+        </div>
 
-    </style>
-</head>
-<body>
-    <header>
-        <figure class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Logotipo_cefet-rj.jpg" alt="Logo do CEFET-RJ">
-        </figure>
-        <section>
-        <h1>
-            CEFET/RJ - CENTRO FEDERAL DE EDUCAÇÃO  
-            TECNOLÓGICA CELSO SUCKOW DA FONSECA 
-        </h1>
-        <h2>
-            Campus Nova Friburgo 
-        </h2>
-        <p>
-            Técnico em Informática Integrado ao Ensino Médio 
-        </p>
-        <p>
-            Programação de Clientes Web 
-        </p>
-        <p>
-            Professor Rafael Escalfoni 
-        </p>
-        </section>
-    </header>
-    <main>
-        <section class="container">
-            <h1>Sábado Letivo, ALEGRIA!</h1>
-            <p>Perceba que há atividades muito similares; a intenção é que você desenvolva trechos reutilizáveis de código, evitando retrabalho e copy n' paste. 
-            </p>
-            <p>As respostas devem ser disponibilizadas através do seu GitHub Pages, na página da  disciplina de Programação de Clientes Web. <strong>Forneça o link na resposta à tarefa. </strong>
-            </p>
-            <p>Bons estudos! </p>
-        </section>
-        <section>
-            <ol>
-                <li><strong>Funções Numéricas </strong>
-                <p>
-                    Crie as funções aplicáveis a arrays, de acordo com a Tabela 1. A função <em>sum</em> deve receber um array numérico como parâmetro e retornar a soma de seus elementos. A função <em>sumOdds</em> recebe um array numérico e retorna a soma apenas dos elementos ímpares. A função <em>product</em> recebe um array numérico e retorna o produto de seus elementos. 
-                </p>
-                <table>
-                    <tr>
-                        <th>Operação</th>
-                        <th>Entrada</th>
-                        <th>Saída</th>
-                    </tr>
-                    <tr>
-                        <td>sum</td>
-                        <td>(1,2,3)</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>sum</td>
-                        <td>(2,2,2)</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>sum</td>
-                        <td>(1,2,3,4,5,6)</td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td>sumOdds</td>
-                        <td>(1,2,3)</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>sumOdds</td>
-                        <td>(2,2,2)</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>sumOdds</td>
-                        <td>(1,2,3,4,5,6)</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>product</td>
-                        <td>(1,2,3)</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>product</td>
-                        <td>(2,2,2)</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>product</td>
-                        <td>(1,2,3,4,5,6)</td>
-                        <td>720</td>
-                    </tr>
-                </table>
-                <fieldset>
-                    <legend>Exercício 1</legend>
-                    <label>Entre com os números separados com vírgulas (,)</label>
-                    <input type="text" id="ipt-01">
-                    <label>Função</label>
-                    <select id="sel01">
-                        <option value="sum">sum()</option>
-                        <option value="sumOdds">sumOdds()</option>
-                        <option value="product">product()</option>
-                    </select>
-                    <button id="executa01">Rodar</button>
-                    <h3>Resposta</h3>
-                    <p id="resp01"></p>
-                </fieldset>
-                </li>
-                <li><strong>Números primos</strong>
-                    <p>
-                        Na matemática um número é considerado primo se ele possuir apenas dois divisores, o número um e ele mesmo. 
-                    </p>
-                    <p>
-                        Para ajudar a gerar uma série de n números primos, crie uma função que ao receber o tamanho n retorne a respectiva série de números primos, por exemplo, ao receber o valor 4 o retorno será 2, 3, 5, 7. Contudo, se for recebido dois valores a interpretação será que a série deverá compreender o intervalo desses valores, portanto, os valores 2, 10 resultaram em 2, 3, 5, 7. 
-                    </p>
-                    <p>
-                        Para analisar mais exemplos veja a Tabela 2.  
-                    </p>
-                    <table>
-                        <tr>
-                            <th>Entrada</th>
-                            <th>Saída</th>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>2, 3, 5, 7</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>2, 3, 5, 7, 11, 13</td>
-                        </tr>
-                        <tr>
-                            <td>2, 10</td>
-                            <td>2, 3, 5, 7</td>
-                        </tr>
-                        <tr>
-                            <td>2, 20</td>
-                            <td>2, 3, 5, 7, 11, 13, 19</td>
-                        </tr>
-                        <tr>
-                            <td>10, 2</td>
-                            <td></td>
-                        </tr>
-                    </table>
-                    <fieldset>
-                        <legend>Exercício 2</legend>
-                        <label>Entrada</label>
-                        <input type="text" id="ipt-02">
-                        
-                        <button id="executa02">Rodar</button>
-                        <h3>Resposta</h3>
-                        <p id="resp02"></p>
-                    </fieldset>
-                </li>
-                <li><strong>Saque Mínimo  </strong>
-                    <p>
-                        A ideia do saque mínimo consiste em determinar qual é a quantidade mínima de cédulas que devem ser coletadas para retirar um valor específico. 
-                    </p>
-                    <p>
-                        Considerando que um ATM possuia as cédulas de 100, 50, 20, 10, 5 e 2, logo para se retirar um valor de R$ 1.280,00 usando a quantidade mínima de notas é necessário as seguintes quantias: 
-                    </p>
-                    <table>
-                        <tr>
-                            <th>Cédula</th>
-                            <th>Quantidade</th>
-                        </tr>
-                        <tr>
-                            <td>100</td>
-                            <td>12</td>
-                        </tr>
-                        <tr>
-                            <td>50</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                    <p>
-                        Para mais exemplos: R$5.705,00 
-                    </p>
-                    <table>
-                        <tr>
-                            <th>Cédula</th>
-                            <th>Quantidade</th>
-                        </tr>
-                        <tr>
-                            <td>100</td>
-                            <td>57</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                    <fieldset>
-                        <legend>Exercício 3</legend>
-                        <label>Entre com um valor</label>
-                        <input type="text" id="ipt-03">
-                        
-                        <button id="executa03">Rodar</button>
-                        <h3>Resposta</h3>
-                        <div id="resp03"></div>
-                    </fieldset>
-                </li>
-                <li>
-                    Considere os arrays abaixo para a questão:
-                    <pre>
-const people = [
-    { name: 'Wes', year: 1988 },
-    { name: 'Kait', year: 1986 },
-    { name: 'Irv', year: 1970 },
-    { name: 'Lux', year: 2015 }
-    ];
+        <div class="form-control">
+          <label for="amount">Valor <br />
+            <small>(negativo - despesas, positivo - receitas)</small>
+          </label>
+          <input type="number" id="amount" placeholder="Valor da transação" />
+        </div>
 
-const comments = [
-    { text: 'Love this!', id: 523423 },
-    { text: 'Super good', id: 823423 },
-    { text: 'You are the best', id: 2039842 },
-    { text: 'Ramen is my fav food ever', id: 123523 },
-    { text: 'Nice Nice Nice!', id: 542328 }
-    ];
-</pre>
-                    <p>Implemente uma função que verifique se há pelo menos uma pessoa com 19 anos ou mais no array <em>people</em>
-                        <button id="btn04-a">Verificar</button>
-                        <h3>Resposta</h3>
-                        <div id="resp04-a"></div>
-                    </p>
-                    <p>
-                        Implemente uma função que filtre comentários pelo texto.
-                        <label>Digite um trecho</label>
-                        <input type="search" id="ipt04-b">
-                        <h3>Encontrados:</h3>
-                        <ul id="resp04-b"></ul>
-                    </p>      
+        <button class="btn">Adicionar</button>
+      </form>
+    </div>
 
-                </li>
-            </ol>
-        </section>
-</main>
-</body>
-<script>
-/**********************
-* Funções utilitarias *
-***********************/
-const escreveResp = (seletor, resp) => {
-    document.querySelector(seletor).innerHTML = resp
-}
-
-/*************
-** questao 1 *
-**************/
-const entrada01 = document.querySelector("#ipt-01")
-const operacaoEscolhida = document.querySelector("#sel01")
-const btn01 = document.querySelector("#executa01")
-
-const sum = (valores) => valores.reduce((acum, elem)=>acum+parseFloat(elem), 0)
-
-
-const sumOdds = (valores) => {
-
-    return valores.reduce((acum,elem)=> {
-     if (elem % 2 !== 0) {
-      return acum + elem;
-    }
-    return acum;
-  }, 0);
-}
-    //seu programa aqui
-
-const product = (valores) => {
-    valores.reduce((acum, elem)=>acum * parseFloat(elem), 1)
-    //seu programa aqui
-}
-
-//ao clicarem no botao
-btn01.addEventListener("click", ()=>{
-    //transformar os valores digitados em um array
-    const valDigit = entrada01.value;
-    const lista = valDigit.split(",").map((valor) => parseFloat(valor.trim()));
-    // exemplo de entrada = 1, 2, 3 => gerar a lista [1, 2, 3]
-    const lista = [1, 2, 3]
-    //escolher a funcao de acordo com operacao informada
-    console.log(operacaoEscolhida.value)
-    let resultado
-    if(operacaoEscolhida.value == "sum") {
-        resultado = sum(lista)
-    } else if (operacaoEscolhida.value === "sumOdds") {
-    resultado = sumOdds(lista)
-  } else if (operacaoEscolhida.value === "product") {
-    resultado = product(lista)
-  }
-  escreveResp("#resp01", resultado)
-})
-    //produzir uma resposta
-
-    // imprimir na tela
-    //escreveResp("#resp01", "sua resposta aqui")
-    escreveResp("#resp01", result)
-})
-
-/*************
-** questao 2 *
-**************/
-const entrada02 = document.querySelector("#ipt-02")
-const btn02 = document.querySelector("#executa02")
-
-const ehPrimo = num => {
-    let primo
-    for(i=2;i<num**1/2;i++) {
-        if (num % i != 0){
-            let primo = primo[i] + num
-        }
-    }
-    return primo
-}
-
-
-//ao clicar no botao #executa02
-btn02.addEventListener("click", () => {
-    //verificar se a entrada tem 1 ou 2 números
-    //se tiver 1 número N
-    //exibir N primos 
-
-    //se tiver 2 números N e M
-    //verificar se N < M
-        //se sim
-        //listar os primos entre N e M, incluindo N e M, se for o caso
-
-        //senao, exibir erro
-
-    //exemplo: considere entrada02.value = 10, 2
-    const valDeEntrada = "10, 2"
-    //tentando transformar a string valDeEntrada num array
-    //se tiver elementos separados por vírgula, teremos duas ou mais posições
-    let listaVal = valDeEntrada.split(",")
-    
-    // caso de 2 números
-    if(listaVal.length>1) {
-        //criando uma lista numérica
-        let listaNumVal = listaVal.map(elem =>parseInt(elem))
-        //condicao de erro N > M
-        if (listaNumVal[0] > listaNumVal[1]) {
-            escreveResp("#resp02", `Entrada incorreta de dados: ${listaNumVal[0]} > ${listaNumVal[1]}`)
-        } 
-        // condicao válida para 2 números
-        else {
-
-        }
-    }
-    //apenas um número de entrada
-    else {
-
-    }
-})
-
-
-/*************
-** questao 3 *
-**************/
-const entrada03 = document.querySelector("#ipt-03")
-const btn03 = document.querySelector("#executa03")
-
-
-//ao clicar no botao
-btn03.addEventListener("click", ()=> {
-    const cedulas = [100, 50, 20, 10, 5, 2]
-
-    //recupere o valor digitado
-
-    //faca a divisao inteira o valor de entrada pelas cédulas, da mais alta -> 100 até a mais baixa -> 2
-
-    //exiba a resposta
-
-
-})
-
-/*************
-** questao 4 *
-**************/
-//item a
-const btn04a = document.querySelector("#btn04-a")
-
-btn04a.addEventListener("click", ()=> {
-    //implemente sua verificacao de idade aqui
-
-    //gere sua resposta 
-    escreveResp("#resp04-a", "sua resposta")
-})
-//item b
-const ipt04b = document.querySelector("#ipt04-b")
-ipt04b.addEventListener("keyup", ()=> {
-    const termoBusca = ipt04b.value
-    //implemente seu filtro aqui
-    console.log(termoBusca)
-    //gere sua resposta 
-    escreveResp("#resp04-b", "sua resposta")
-})
-
-</script>
-
+    <script src="financeiro.js"></script>
+  </body>
 </html>
