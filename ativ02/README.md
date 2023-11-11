@@ -1,2 +1,0 @@
-# Manolovinha.github.io
-batatana
